@@ -6,9 +6,34 @@ using System.Threading.Tasks;
 
 namespace QuizProjectCOM326
 {
-    public class Question
+    public class Addption
     {
         private int QuestionID;
-        public string
+        private string QuestionText;
+        private string[] QuestionOptions;
+        private string CorrectOptionAnswers;
+        private string QuestionDifficulty;
+
+
     }
+    public class AddOption(String option)
+    {
+        
+    }
+    public class RemoveOption(String option)
+    {
+
+    }
+    public class CheckAnswers(String answers)
+    {
+
+    }
+
+    public class SetCorrectAnswer(String colrrect)
+    {
+
+    }
+
+
+
 }

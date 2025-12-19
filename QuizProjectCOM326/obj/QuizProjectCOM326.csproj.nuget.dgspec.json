@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\IISXG\\Source\\Repos\\Team-23\\QuizProjectCOM326\\QuizProjectCOM326.csproj": {}
+    "C:\\Users\\eoinm\\Source\\Repos\\Team-23\\QuizProjectCOM326\\QuizProjectCOM326.csproj": {}
   },
   "projects": {
-    "C:\\Users\\IISXG\\Source\\Repos\\Team-23\\QuizProjectCOM326\\QuizProjectCOM326.csproj": {
+    "C:\\Users\\eoinm\\Source\\Repos\\Team-23\\QuizProjectCOM326\\QuizProjectCOM326.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\IISXG\\Source\\Repos\\Team-23\\QuizProjectCOM326\\QuizProjectCOM326.csproj",
+        "projectUniqueName": "C:\\Users\\eoinm\\Source\\Repos\\Team-23\\QuizProjectCOM326\\QuizProjectCOM326.csproj",
         "projectName": "QuizProjectCOM326",
-        "projectPath": "C:\\Users\\IISXG\\Source\\Repos\\Team-23\\QuizProjectCOM326\\QuizProjectCOM326.csproj",
-        "packagesPath": "C:\\Users\\IISXG\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\IISXG\\Source\\Repos\\Team-23\\QuizProjectCOM326\\obj\\",
+        "projectPath": "C:\\Users\\eoinm\\Source\\Repos\\Team-23\\QuizProjectCOM326\\QuizProjectCOM326.csproj",
+        "packagesPath": "C:\\Users\\eoinm\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\eoinm\\Source\\Repos\\Team-23\\QuizProjectCOM326\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\IISXG\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\eoinm\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -65,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
