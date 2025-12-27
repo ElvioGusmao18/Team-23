@@ -10,4 +10,5 @@ namespace QuizProjectCOM326
     {
         public static DateTime LoginDate;
     }
+
 }
