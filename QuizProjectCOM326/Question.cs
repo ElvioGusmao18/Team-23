@@ -14,8 +14,8 @@ namespace QuizProjectCOM326
         //private fields
         private int QuestionID;
         private string QuestionText;
-        private string[] QuestionOptions;
-        private string CorrectOptionAnswers;
+        private LinkedList<string> QuestionOptions;
+        private LinkedList<string> CorrectOptionAnswers;
         private string QuestionDifficulty;
 
         //public fields
@@ -29,12 +29,12 @@ namespace QuizProjectCOM326
             get { return QuestionText; }
             set { QuestionText = value; }
         }
-        public string[] questionOptions
+        public LinkedList<string> questionOptions
         {
             get { return QuestionOptions; }
             set { QuestionOptions = value; }
         }
-        public string correctOptionAnswers
+        public LinkedList<string> correctOptionAnswers
         {
             get { return CorrectOptionAnswers; }
             set { CorrectOptionAnswers = value; }
@@ -46,7 +46,7 @@ namespace QuizProjectCOM326
 
         }
         //constructor
-        public Addption(int qID, string qText, string[] qOptions, string correctAnswers, string qDifficulty)
+        public Addption(int qID, string qText, LinkedList<string> qOptions, LinkedList<string> correctAnswers, string qDifficulty)
         {
             QuestionID = qID;
             QuestionText = qText;
@@ -59,102 +59,101 @@ namespace QuizProjectCOM326
         {
             QuestionID = 0;
             QuestionText = "Default Question Text";
-            QuestionOptions = new string[4] { "Option 1", "Option 2", "Option 3", "Option 4" };
-            CorrectOptionAnswers = "Option 1";
+            QuestionOptions = new LinkedList<string>();
+            CorrectOptionAnswers = new LinkedList<string>();
             QuestionDifficulty = "Easy";
         }
 
-        // allow the admin to add a question
-        public string[] addOption(string[] QuestionOptions,string option ,Boolean AdminCheck)
+        // allow the admin to add an option to a question 
+        //the method takes in the list of options for that question and the option to be added
+        //then returns the updated list of options
+        public LinkedList<string> addOption(LinkedList<string> QuestionOptions, string option, Boolean AdminCheck)
         {
             // add the given option to a list of for that question
             //then return the list
-         if (AdminCheck == true)
-            {
-                for (int i = 0; i < QuestionOptions.Length; i++)
-                {
-                    if (QuestionOptions[i] == null)
-                    {
-                        QuestionOptions[i] = option;
-                        break;
-                    }
-                }
-            }
-         for (int i = 0; i < QuestionOptions.Length; i++)
-            {
-                Console.WriteLine(QuestionOptions[i]);
-            }
-
-            return QuestionOptions;
-        }
-
-        // allow the admin to remove a question
-        public string[] RemoveOption(string[] QuestionOptions, string option, Boolean AdminCheck)
-        {
-            // find the option by ID then 
-            // remove the given option from the list of options for that question
+            LinkedList<string> optionsList = new LinkedList<string>(QuestionOptions);
             if (AdminCheck == true)
             {
-                for (int i = 0; i < QuestionOptions.Length; i++)
-                {
-                    if (QuestionOptions[i] == option)
-                    {
-                        QuestionOptions[i] = null;
-                        break;
-                    }
-                }
-                for (int i = 0; i < QuestionOptions.Length; i++)
-                {
-                    Console.WriteLine(QuestionOptions[i]);
-                }
-
+                optionsList.AddLast(option);
             }
-            return QuestionOptions;
+            return optionsList;
         }
-        // cheack the answers given by the user
-        public string[] CheackAnswers(string[] answers)
-        {
-            string[] userresulst = new string[answers.Length];
-            for (int i = 0; i < answers.Length; i++)
-            {
-                Console.WriteLine(answers[i]);
+        //confirmation for the options added
 
-                if (answers[i] == CorrectOptionAnswers)
+
+
+
+
+        // allow the admin to remove an option from a question
+        // the method takes in the list of options for that question and the option to be removed
+        // then returns the updated list of options
+        public LinkedList<string> RemoveOption(LinkedList<string> QuestionOptions, string option, Boolean AdminCheck)
+        {
+            LinkedList<string> optionsList = new LinkedList<string>(QuestionOptions);
+            if (AdminCheck == true)
+            {
+                bool check = optionsList.Contains(option);
+                if (check == true)
                 {
-                    userresulst[i] = "Correct";
-                    
+                    optionsList.Remove(option);
                 }
                 else
                 {
-                    userresulst[i] = "Incorrect"; 
+                    Console.WriteLine("Option not found.");
+
                 }
-              
             }
+            return optionsList;
+        }
+
+
+
+        // cheack the answers given by the user
+        // the method takes in an array of answers given by the user
+        // then returns an array of results indicating whether each answer is correct or incorrect
+        public List<string> CheackAnswers(List<string> answers)
+        {
+
+            List<string> userresulst = new List<string>();
+            for (int i = 0; i < answers.Count; i++)
+            {
+                if (answers[i] == CorrectOptionAnswers.ElementAt(i))
+                {
+                    userresulst.Add("Correct");
+                }
+                else
+                {
+                    userresulst.Add("Incorrect");
+                }
+            }
+
+
+
             return userresulst;
         }
         // allows the admin to set the correct answer for a question
-        public string SetCorrectAnswer(String colrrect, Boolean AdminCheck)
+        // the method takes in the correct answer and updates the correct answer for that question
+        // then returns the updated correct answer
+        public LinkedList<string> SetCorrectAnswer(String correctIn, LinkedList<string> CorrectAnswers, Boolean AdminCheck)
         {
             if (AdminCheck == true)
             {
-                for (int i = 0; i < QuestionOptions.Length; i++)
+                for (int i = 0; i < CorrectAnswers.Count; i++)
                 {
-                    Console.WriteLine(QuestionOptions[i]);
-                    if (QuestionOptions[i] == colrrect)
+                    if (CorrectAnswers.ElementAt(i) == correctIn)
                     {
-                        CorrectOptionAnswers = colrrect;
-                        Console.WriteLine("Correct answer set to: " + colrrect);
+
+                        Console.WriteLine("Answer already set as correct.");
                         break;
                     }
-                        
-                }
-
-                
+                    else
+                    {
+                        CorrectAnswers.AddLast(correctIn);
+                    }
+                } 
             }
-
-            return CorrectOptionAnswers;
+            return CorrectAnswers;
         }
-
     }
     
 }
