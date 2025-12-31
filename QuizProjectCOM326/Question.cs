@@ -9,6 +9,5 @@ namespace QuizProjectCOM326
     public class Question
     {
         private int QuestionID;
-        public string
     }
 }

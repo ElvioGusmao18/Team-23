@@ -10,7 +10,7 @@ namespace QuizProjectCOM326
     {
         // Variable declaration
         
-        private static int _ID;
+        public int _ID;
         public string _username;
         public string _password;
         public string _email;
@@ -18,10 +18,11 @@ namespace QuizProjectCOM326
 
 
         // Getting and setting values
+
+        //ID only uses get to make it read only.
         public int ID
         {
             get { return _ID; }
-            set { _ID = value; }
         }
 
         public string Username
@@ -54,12 +55,14 @@ namespace QuizProjectCOM326
 
         }
 
-        // This constructor will be used to create a new user.
-        public User(string Username, string Password, string Email)
+        // This constructor will be used to create a new user of either type (student/admin).
+        public User(int ID, string Username, string Password, string Email, string Role)
         {
+            _ID = ID;
             this.Username = Username;
             this.Password = Password;
             this.Email = Email;
+            this.Role = Role;
         }
     }
 }

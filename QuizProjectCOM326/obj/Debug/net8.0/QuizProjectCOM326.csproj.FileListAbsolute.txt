@@ -1,0 +1,15 @@
+C:\Users\IISXG\Source\Repos\Team-23\QuizProjectCOM326\bin\Debug\net8.0\QuizProjectCOM326.exe
+C:\Users\IISXG\Source\Repos\Team-23\QuizProjectCOM326\bin\Debug\net8.0\QuizProjectCOM326.deps.json
+C:\Users\IISXG\Source\Repos\Team-23\QuizProjectCOM326\bin\Debug\net8.0\QuizProjectCOM326.runtimeconfig.json
+C:\Users\IISXG\Source\Repos\Team-23\QuizProjectCOM326\bin\Debug\net8.0\QuizProjectCOM326.dll
+C:\Users\IISXG\Source\Repos\Team-23\QuizProjectCOM326\bin\Debug\net8.0\QuizProjectCOM326.pdb
+C:\Users\IISXG\Source\Repos\Team-23\QuizProjectCOM326\obj\Debug\net8.0\QuizProjectCOM326.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\IISXG\Source\Repos\Team-23\QuizProjectCOM326\obj\Debug\net8.0\QuizProjectCOM326.AssemblyInfoInputs.cache
+C:\Users\IISXG\Source\Repos\Team-23\QuizProjectCOM326\obj\Debug\net8.0\QuizProjectCOM326.AssemblyInfo.cs
+C:\Users\IISXG\Source\Repos\Team-23\QuizProjectCOM326\obj\Debug\net8.0\QuizProjectCOM326.csproj.CoreCompileInputs.cache
+C:\Users\IISXG\Source\Repos\Team-23\QuizProjectCOM326\obj\Debug\net8.0\QuizProjectCOM326.sourcelink.json
+C:\Users\IISXG\Source\Repos\Team-23\QuizProjectCOM326\obj\Debug\net8.0\QuizProjectCOM326.dll
+C:\Users\IISXG\Source\Repos\Team-23\QuizProjectCOM326\obj\Debug\net8.0\refint\QuizProjectCOM326.dll
+C:\Users\IISXG\Source\Repos\Team-23\QuizProjectCOM326\obj\Debug\net8.0\QuizProjectCOM326.pdb
+C:\Users\IISXG\Source\Repos\Team-23\QuizProjectCOM326\obj\Debug\net8.0\QuizProjectCOM326.genruntimeconfig.cache
+C:\Users\IISXG\Source\Repos\Team-23\QuizProjectCOM326\obj\Debug\net8.0\ref\QuizProjectCOM326.dll
