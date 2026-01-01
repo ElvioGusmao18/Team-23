@@ -15,7 +15,7 @@ namespace QuizProjectCOM326
         private int QuestionID;
         private string QuestionText;
         private LinkedList<string> QuestionOptions;
-        private LinkedList<string> CorrectOptionAnswers;
+        private string CorrectOptionAnswers;
         private string QuestionDifficulty;
 
         //public fields
@@ -34,7 +34,7 @@ namespace QuizProjectCOM326
             get { return QuestionOptions; }
             set { QuestionOptions = value; }
         }
-        public LinkedList<string> correctOptionAnswers
+        public string correctOptionAnswers
         {
             get { return CorrectOptionAnswers; }
             set { CorrectOptionAnswers = value; }
@@ -46,7 +46,7 @@ namespace QuizProjectCOM326
 
         }
         //constructor
-        public Addption(int qID, string qText, LinkedList<string> qOptions, LinkedList<string> correctAnswers, string qDifficulty)
+        public Addption(int qID, string qText, LinkedList<string> qOptions, string correctAnswers, string qDifficulty)
         {
             QuestionID = qID;
             QuestionText = qText;
@@ -60,26 +60,25 @@ namespace QuizProjectCOM326
             QuestionID = 0;
             QuestionText = "Default Question Text";
             QuestionOptions = new LinkedList<string>();
-            CorrectOptionAnswers = new LinkedList<string>();
+            CorrectOptionAnswers = "Default Correct Answer";
             QuestionDifficulty = "Easy";
         }
 
         // allow the admin to add an option to a question 
         //the method takes in the list of options for that question and the option to be added
         //then returns the updated list of options
-        public LinkedList<string> addOption(LinkedList<string> QuestionOptions, string option, Boolean AdminCheck)
+        public LinkedList<string> addOption(string option, Boolean AdminCheck)
         {
             // add the given option to a list of for that question
             //then return the list
-            LinkedList<string> optionsList = new LinkedList<string>(QuestionOptions);
+            
             if (AdminCheck == true)
             {
-                optionsList.AddLast(option);
-                optionsList.OrderBy(x => x);
+                questionOptions.AddLast(option);
             }
-            return optionsList;
+            return questionOptions;
         }
-        //confirmation for the options added
+       
 
 
 
@@ -88,23 +87,22 @@ namespace QuizProjectCOM326
         // allow the admin to remove an option from a question
         // the method takes in the list of options for that question and the option to be removed
         // then returns the updated list of options
-        public LinkedList<string> RemoveOption(LinkedList<string> QuestionOptions, string option, Boolean AdminCheck)
+        public LinkedList<string> RemoveOption(string option, Boolean AdminCheck)
         {
-            LinkedList<string> optionsList = new LinkedList<string>(QuestionOptions);
+            var descriptionExists = questionOptions.Contains(option);
             if (AdminCheck == true)
             {
-                bool check = optionsList.Contains(option);
-                if (check == true)
+                
+                if (!descriptionExists)
                 {
-                    optionsList.Remove(option);
+                   Console.WriteLine("Option not found.");
                 }
                 else
                 {
-                    Console.WriteLine("Option not found.");
-
+                    questionOptions.Remove(option);
                 }
             }
-            return optionsList;
+            return questionOptions;
         }
 
 
@@ -118,7 +116,7 @@ namespace QuizProjectCOM326
             List<string> userresulst = new List<string>();
             for (int i = 0; i < answers.Count; i++)
             {
-                if (answers[i] == CorrectOptionAnswers.ElementAt(i))
+                if (answers[i] == correctOptionAnswers)
                 {
                     userresulst.Add("Correct");
                 }
@@ -143,14 +141,12 @@ namespace QuizProjectCOM326
                 {
                     if (CorrectAnswers.ElementAt(i) == correctIn)
                     {
-
                         Console.WriteLine("Answer already set as correct.");
                         break;
                     }
                     else
                     {
                         CorrectAnswers.AddLast(correctIn);
-                        CorrectAnswers.OrderBy(x => x);
                     }
                 } 
             }

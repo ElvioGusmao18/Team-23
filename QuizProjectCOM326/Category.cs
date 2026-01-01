@@ -50,11 +50,12 @@ namespace QuizProjectCOM326
             if (!descriptionExists)
             {
                 return "Description not found.";
+                
             } else
             {
                 CategoryName.Remove(oldName);
                 CategoryName.AddAfter(CategoryName.Last, newName);
-                CategoryName.OrderBy(x => x);
+               
             }
             return "Category updated successfully.";
         }
@@ -71,10 +72,11 @@ namespace QuizProjectCOM326
             {
                 CategoryDescription.Remove(oldDescription);
                 CategoryDescription.AddAfter(CategoryDescription.Last, newDescription);
-                CategoryDescription.OrderBy(x => x);
+                
             }
             return "Category description updated successfully.";
         }
+
     }
     
 }
