@@ -75,6 +75,7 @@ namespace QuizProjectCOM326
             if (AdminCheck == true)
             {
                 optionsList.AddLast(option);
+                optionsList.OrderBy(x => x);
             }
             return optionsList;
         }
@@ -149,6 +150,7 @@ namespace QuizProjectCOM326
                     else
                     {
                         CorrectAnswers.AddLast(correctIn);
+                        CorrectAnswers.OrderBy(x => x);
                     }
                 } 
             }

@@ -5,6 +5,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{60558493-1257-4EBC-B1CE-A3AB5AE6B75A}|QuizProjectCOM326\\QuizProjectCOM326.csproj|c:\\users\\eoinm\\source\\repos\\team-23\\quizprojectcom326\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{60558493-1257-4EBC-B1CE-A3AB5AE6B75A}|QuizProjectCOM326\\QuizProjectCOM326.csproj|solutionrelative:quizprojectcom326\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{60558493-1257-4EBC-B1CE-A3AB5AE6B75A}|QuizProjectCOM326\\QuizProjectCOM326.csproj|c:\\users\\eoinm\\source\\repos\\team-23\\quizprojectcom326\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60558493-1257-4EBC-B1CE-A3AB5AE6B75A}|QuizProjectCOM326\\QuizProjectCOM326.csproj|solutionrelative:quizprojectcom326\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,13 +34,26 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Category.cs",
+              "DocumentMoniker": "C:\\Users\\eoinm\\source\\repos\\Team-23\\QuizProjectCOM326\\Category.cs",
+              "RelativeDocumentMoniker": "QuizProjectCOM326\\Category.cs",
+              "ToolTip": "C:\\Users\\eoinm\\source\\repos\\Team-23\\QuizProjectCOM326\\Category.cs",
+              "RelativeToolTip": "QuizProjectCOM326\\Category.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAIwBsAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-31T00:28:05.137Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Question.cs",
               "DocumentMoniker": "C:\\Users\\eoinm\\source\\repos\\Team-23\\QuizProjectCOM326\\Question.cs",
               "RelativeDocumentMoniker": "QuizProjectCOM326\\Question.cs",
               "ToolTip": "C:\\Users\\eoinm\\source\\repos\\Team-23\\QuizProjectCOM326\\Question.cs",
               "RelativeToolTip": "QuizProjectCOM326\\Question.cs",
-              "ViewState": "AgIAAF4AAAAAAAAAAAAqwGsAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJgAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-19T14:10:42.776Z",
               "EditorCaption": ""
