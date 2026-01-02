@@ -8,7 +8,48 @@ namespace QuizProjectCOM326
 {
     internal class Student : User
     {
-        public static string Status;
+        private string status;
+
+        // Default constructor
+        public Student() : base()
+        {
+            status = "active";
+            Role = "Student";
+        }
+
+        // Custom constructor
+        public Student(int ID, string Username, string Password, string Email, string Status)
+            : base(ID, Username, Password, Email, "Student")
+        {
+            if (Status == "active" || Status == "inactive")
+            {
+                status = Status;
+            }
+            else
+            {
+                status = "active";
+            }
+        }
+
+        // Read-only Status property
+        public string Status
+        {
+            get { return status; }
+        }
+
+        // Helper method used by QuizSystem
+        public bool IsActive()
+        {
+            return status == "active";
+        }
+
+        // Status update method (Admin only)
+        public void SetStatus(string newStatus)
+        {
+            if (newStatus == "active" || newStatus == "inactive")
+            {
+                status = newStatus;
+            }
+        }
     }
 }
- 
