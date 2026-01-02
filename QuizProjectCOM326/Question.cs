@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Eoin Morgan - COM326 - Quiz Project
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace QuizProjectCOM326
 {
-    public class Addption
+    public class Question
     {
+
         //private fields
         private int QuestionID;
         private string QuestionText;
@@ -43,7 +45,7 @@ namespace QuizProjectCOM326
 
         }
         //constructor
-        public Addption(int qID, string qText, LinkedList<string> qOptions, string correctAnswers, string qDifficulty)
+        public Question(int qID, string qText, LinkedList<string> qOptions, string correctAnswers, string qDifficulty)
         {
             QuestionID = qID;
             QuestionText = qText;
@@ -52,7 +54,7 @@ namespace QuizProjectCOM326
             QuestionDifficulty = qDifficulty;
         }
         // default constructor
-        public Addption()
+        public Question()
         {
             QuestionID = 0;
             QuestionText = "Default Question Text";
@@ -119,7 +121,7 @@ namespace QuizProjectCOM326
                 }
             }
 
-
+             
 
             return userresulst;
         }
