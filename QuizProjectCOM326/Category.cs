@@ -42,6 +42,7 @@ namespace QuizProjectCOM326
             CategoryName = new LinkedList<string>();
             CategoryDescription = new LinkedList<string>();
         }
+
         //method will take in the old name and new name to update the category name
         //then return a string message to confirm the update
         public string UpdateCategoryName(string newName , string oldName)
@@ -59,6 +60,7 @@ namespace QuizProjectCOM326
             }
             return "Category updated successfully.";
         }
+
         // method will take in the old description and new description to update the category description
         // then return a string message to confirm the update
         public string UpdateCategoryDescription(string newDescription, string oldDescription)

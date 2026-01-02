@@ -8,9 +8,6 @@ namespace QuizProjectCOM326
 {
     public class Addption
     {
-        // foren variables fake data
-        String category = "Temp";
-        Boolean AdminCheck = true;
         //private fields
         private int QuestionID;
         private string QuestionText;
@@ -80,10 +77,6 @@ namespace QuizProjectCOM326
         }
        
 
-
-
-
-
         // allow the admin to remove an option from a question
         // the method takes in the list of options for that question and the option to be removed
         // then returns the updated list of options
@@ -130,6 +123,7 @@ namespace QuizProjectCOM326
 
             return userresulst;
         }
+
         // allows the admin to set the correct answer for a question
         // the method takes in the correct answer and updates the correct answer for that question
         // then returns the updated correct answer
