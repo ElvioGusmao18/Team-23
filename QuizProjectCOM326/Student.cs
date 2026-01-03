@@ -31,19 +31,16 @@ namespace QuizProjectCOM326
             }
         }
 
-        // Read-only Status property
         public string Status
         {
             get { return status; }
         }
 
-        // Helper method used by QuizSystem
         public bool IsActive()
         {
             return status == "active";
         }
 
-        // Status update method (Admin only)
         public void SetStatus(string newStatus)
         {
             if (newStatus == "active" || newStatus == "inactive")
