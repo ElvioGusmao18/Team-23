@@ -8,6 +8,7 @@ namespace QuizProjectCOM326
 {
     internal class Student : User
     {
+       
         private string status;
 
         // Default constructor
@@ -18,35 +19,47 @@ namespace QuizProjectCOM326
         }
 
         // Custom constructor
-        public Student(int ID, string Username, string Password, string Email, string Status)
-            : base(ID, Username, Password, Email, "Student")
+        public Student(int id, string username, string password, string email, string status)
+            : base(id, username, password, email, "Student")
         {
-            if (Status == "active" || Status == "inactive")
+            if (status == "active" || status == "inactive")
             {
-                status = Status;
+                this.status = status;
             }
             else
             {
-                status = "active";
+                this.status = "active";
             }
         }
 
-        public string Status
-        {
-            get { return status; }
-        }
-
+        
         public bool IsActive()
         {
             return status == "active";
         }
 
-        public void SetStatus(string newStatus)
+        
+        public void StartQuiz(Quiz quiz)
         {
-            if (newStatus == "active" || newStatus == "inactive")
+            if (!IsActive())
             {
-                status = newStatus;
+                Console.WriteLine("Student is inactive and cannot start the quiz.");
+                return;
             }
+
+            Console.WriteLine("Quiz started.");
+        }
+
+        
+        public void SubmitQuiz(Quiz quiz)
+        {
+            Console.WriteLine("Quiz submitted.");
+        }
+
+       
+        public void ViewQuizResults()
+        {
+            Console.WriteLine("Viewing quiz results.");
         }
     }
 }
