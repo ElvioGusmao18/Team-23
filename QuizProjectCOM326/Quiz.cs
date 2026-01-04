@@ -1,94 +1,46 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
 
 namespace QuizProjectCOM326
 {
-    // Must be internal because Category is internal 
     internal class Quiz
     {
-        // Fields
-        
         private static int _nextId = 1;
-
-        // Store questions = encapsulation
         private readonly List<Question> _quizQuestions = new List<Question>();
 
-        
-        // Properties 
-        
-        public int QuizID { get; }                 // read-only
+        public int QuizID { get; }  // read-only 
         public string QuizTitle { get; private set; }
         public string QuizDescription { get; private set; }
-        public Category? QuizCategory { get; private set; }
+        public Category QuizCategory { get; private set; }
         public DateTime QuizDate { get; private set; }
 
-        // Read-only access for the question list
-        public IReadOnlyList<Question> QuizQuestions => _quizQuestions.AsReadOnly();
+        // QuizQuestions is a list
+        public IReadOnlyList<Question> QuizQuestions => _quizQuestions;
 
-        
-        // Constructors (required)
-        
-        // Default constructor
-        public Quiz()
-        {
-            QuizID = _nextId++;
-            QuizTitle = "";
-            QuizDescription = "";
-            QuizCategory = null;
-            QuizDate = DateTime.Now;
-        }
-
-        // Custom constructor
-        public Quiz(string title, string description, Category category, DateTime? quizDate = null)
+        public Quiz(string title, string description, Category category)
         {
             QuizID = _nextId++;
             QuizTitle = title ?? "";
             QuizDescription = description ?? "";
-            QuizCategory = category;
-            QuizDate = quizDate ?? DateTime.Now;
+            QuizCategory = category ?? throw new ArgumentNullException(nameof(category));
+            QuizDate = DateTime.Now;
         }
 
-        
-        // Methods (UML)
-
-        // Add a question to this quiz
         public void AddQuestion(Question question)
         {
-            if (question == null)
-                throw new ArgumentNullException(nameof(question));
-
-            // If the question has an ID we can read, stop duplicates
-            int? newId = TryGetQuestionId(question);
-            if (newId.HasValue)
-            {
-                bool exists = _quizQuestions.Any(q => TryGetQuestionId(q) == newId.Value);
-                if (exists)
-                    throw new InvalidOperationException($"Question with ID {newId.Value} already exists in this quiz.");
-            }
-
+            if (question == null) throw new ArgumentNullException(nameof(question));
             _quizQuestions.Add(question);
         }
 
-        // Remove a question by ID
-        public bool RemoveQuestion(int questionID)
+        public bool RemoveQuestion(Question question)
         {
-            if (questionID <= 0)
-                throw new ArgumentOutOfRangeException(nameof(questionID), "Question ID must be greater than 0.");
+            if (question == null) return false;
+            return _quizQuestions.Remove(question);
+        }
 
-            // Find the first question where we can read an ID that matches
-            for (int i = 0; i < _quizQuestions.Count; i++)
-            {
-                int? id = TryGetQuestionId(_quizQuestions[i]);
-                if (id.HasValue && id.Value == questionID)
-                {
-                    _quizQuestions.RemoveAt(i);
-                    return true;
-                }
-            }
-
-            return false;
+        public int GetTotalQuestions()
+        {
+            return _quizQuestions.Count;
         }
 
         public void UpdateTitle(string newTitle)
@@ -112,45 +64,9 @@ namespace QuizProjectCOM326
             QuizCategory = category ?? throw new ArgumentNullException(nameof(category));
         }
 
-        public int GetTotalQuestions()
-        {
-            return _quizQuestions.Count;
-        }
-
         public override string ToString()
         {
             return $"{QuizTitle} - {GetTotalQuestions()} questions";
-        }
-
-        
-        // Tries to read the Question ID without assuming it is public.
-        
-        private static int? TryGetQuestionId(Question question)
-        {
-            if (question == null) return null;
-
-            Type t = question.GetType();
-
-            // Try common property names first
-            PropertyInfo? prop =
-                t.GetProperty("QuestionID", BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic) ??
-                t.GetProperty("questionID", BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic) ??
-                t.GetProperty("QuestionId", BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
-
-            if (prop != null && prop.PropertyType == typeof(int))
-                return (int)prop.GetValue(question)!;
-
-            // Try common field names if no property was found
-            FieldInfo? field =
-                t.GetField("QuestionID", BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic) ??
-                t.GetField("questionID", BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic) ??
-                t.GetField("_questionID", BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
-
-            if (field != null && field.FieldType == typeof(int))
-                return (int)field.GetValue(question)!;
-
-            // If we cannot read an ID, return null (still allows quiz to work)
-            return null;
         }
     }
 }
