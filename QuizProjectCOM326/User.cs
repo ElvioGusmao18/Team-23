@@ -1,4 +1,6 @@
-﻿using System;
+﻿// Done by Ryan Miller - B00986294 : COM326, QUIZ PROJECT
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,20 +11,17 @@ namespace QuizProjectCOM326
     public class User
     {
         // Variable declaration
-        
-        public int _ID;
-        public string _username;
-        public string _password;
-        public string _email;
-        public string _role;
+        protected int _ID;
+        protected string _username;
+        protected string _password;
+        protected string _email;
+        protected string _role;
 
-
-        // Getting and setting values
-
-        //ID only uses get to make it read only.
+        // Getting/setting variables
         public int ID
         {
             get { return _ID; }
+            protected set { _ID = value; }
         }
 
         public string Username
@@ -41,7 +40,6 @@ namespace QuizProjectCOM326
         {
             get { return _email; }
             set { _email = value; }
-
         }
 
         public string Role
@@ -50,15 +48,15 @@ namespace QuizProjectCOM326
             set { _role = value; }
         }
 
+        // Default/blank constructor
         public User()
         {
-
         }
 
-        // This constructor will be used to create a new user of either type (student/admin).
+        // Constructor used to give template to both user types (admin/user)
         public User(int ID, string Username, string Password, string Email, string Role)
         {
-            _ID = ID;
+            this.ID = ID;
             this.Username = Username;
             this.Password = Password;
             this.Email = Email;
