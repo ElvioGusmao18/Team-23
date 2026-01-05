@@ -1,5 +1,0 @@
-C:\Users\jason\source\repos\Quiz-23\QuizProjectCOM326\obj\Debug\net8.0\QuizProjectCOM326.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\jason\source\repos\Quiz-23\QuizProjectCOM326\obj\Debug\net8.0\QuizProjectCOM326.AssemblyInfoInputs.cache
-C:\Users\jason\source\repos\Quiz-23\QuizProjectCOM326\obj\Debug\net8.0\QuizProjectCOM326.AssemblyInfo.cs
-C:\Users\jason\source\repos\Quiz-23\QuizProjectCOM326\obj\Debug\net8.0\QuizProjectCOM326.csproj.CoreCompileInputs.cache
-C:\Users\jason\source\repos\Quiz-23\QuizProjectCOM326\obj\Debug\net8.0\QuizProjectCOM326.sourcelink.json
