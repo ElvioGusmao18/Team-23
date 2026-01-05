@@ -48,8 +48,9 @@ namespace QuizProjectCOM326
         //then return a string message to confirm the update
         public string UpdateCategoryName(string newName , string oldName)
         {
-            var descriptionExists = CategoryName.Contains(oldName);
-            if (!descriptionExists)
+            List<string> TempCategoryName = new List<string>(CategoryName);
+            var descriptionExists = TempCategoryName.IndexOf(oldName);
+            if (descriptionExists == -1)
             {
                 return "Description not found.";
                 
@@ -57,7 +58,8 @@ namespace QuizProjectCOM326
             {
                 CategoryName.Remove(oldName);
                 CategoryName.AddAfter(CategoryName.Last, newName);
-               
+                
+
             }
             return "Category updated successfully.";
         }
@@ -66,8 +68,9 @@ namespace QuizProjectCOM326
         // then return a string message to confirm the update
         public string UpdateCategoryDescription(string newDescription, string oldDescription)
         {
-            var descriptionExists = CategoryDescription.Contains(oldDescription);
-            if (!descriptionExists)
+            List<string> TempCategoryDescription = new List<string>(CategoryDescription);
+            var descriptionExists = TempCategoryDescription.IndexOf(oldDescription);
+            if (descriptionExists == -1)
             {
                 return "Description not found.";
             }
